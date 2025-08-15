@@ -36,6 +36,7 @@ func player_falling(delta):
 func player_idle(delta):
 	if is_on_floor():
 		current_state = State.Idle
+		print("State: ", State.keys()[current_state])
 
 
 func player_run(delta):
@@ -48,9 +49,8 @@ func player_run(delta):
 	
 	if direction != 0:
 		current_state = State.Run
+		print("State: ", State.keys()[current_state])
 		animated_sprite_2d.flip_h = false if direction > 0 else true
-
-
 
 func player_jump(delta):
 	if Input.is_action_just_pressed("jump"):
@@ -69,4 +69,3 @@ func player_animations():
 
 	elif current_state == State.Jump:
 		animated_sprite_2d.play("jump")
-
