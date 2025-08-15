@@ -12,6 +12,7 @@ config_version=5
 
 config/name="DBGame"
 run/main_scene="res://Player/players.tscn"
+
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
