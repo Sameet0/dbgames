@@ -3,10 +3,13 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 const GRAVITY = 1000
+<<<<<<< HEAD
 const SPEED = 300
 const JUMP = -300
 const JUMP_HORIZONTAL = 100
 enum State { Idle, Run, Jump}
+=======
+>>>>>>> parent of ab24d94 (walking running)
 
 
 var current_state
@@ -24,8 +27,6 @@ func _physics_process(delta):
 
 	
 	move_and_slide()
-	
-	player_animations()
 
 
 func player_falling(delta):
@@ -42,13 +43,9 @@ func player_run(delta):
 	var direction = Input.get_axis("move_left","move_right")
 	
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * 300
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
-	if direction != 0:
-		current_state = State.Run
-		animated_sprite_2d.flip_h = false if direction > 0 else true
+		velocity.x = move_toward(velocity.x, 0, 300)
 
 
 
@@ -64,9 +61,14 @@ func player_jump(delta):
 func player_animations():
 	if current_state == State.Idle:
 		animated_sprite_2d.play("idle")
+<<<<<<< HEAD
 	elif current_state == State.Run:
 		animated_sprite_2d.play("run")
 
 	elif current_state == State.Jump:
 		animated_sprite_2d.play("jump")
 
+=======
+	else if current_state == State.Run
+	animated_sprite_2d.play("run")
+>>>>>>> parent of ab24d94 (walking running)
